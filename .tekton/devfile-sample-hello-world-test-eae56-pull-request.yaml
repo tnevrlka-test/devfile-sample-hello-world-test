@@ -242,7 +242,7 @@ spec:
       - name: IMAGE_APPEND_PLATFORM
         value: "true"
       - name: BUILD_TIMESTAMP
-        value: $(tasks.init.results.BUILD_TIMESTAMP)
+        value: $(tasks.init.results.build-timestamp)
       runAfter:
       - prefetch-dependencies
       taskRef:
