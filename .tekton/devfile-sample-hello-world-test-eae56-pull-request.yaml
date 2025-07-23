@@ -148,7 +148,7 @@ spec:
         - name: name
           value: init
         - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-init:0.2@sha256:66e90d31e1386bf516fb548cd3e3f0082b5d0234b8b90dbf9e0d4684b70dbe1a
+          value: quay.io/tnevrlka-test/tekton-catalog/task-init@sha256:55d215254f1c3eb4c02bc7be73599e6aaa9be34781cec0667082786c8d1cfa14
         - name: kind
           value: task
         resolver: bundles
@@ -241,6 +241,8 @@ spec:
         value: $(tasks.prefetch-dependencies.results.CACHI2_ARTIFACT)
       - name: IMAGE_APPEND_PLATFORM
         value: "true"
+      - name: BUILD_TIMESTAMP
+        value: $(tasks.init.results.BUILD_TIMESTAMP)
       runAfter:
       - prefetch-dependencies
       taskRef:
